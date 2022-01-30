@@ -17,4 +17,5 @@ use App\Http\Controllers\MainController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('/new', [MainController::class, 'newTrack']);
+Route::get('/create', [MainController::class, 'newTrackForm']);
+Route::post('/created', [MainController::class, 'newTrackRequest']);
