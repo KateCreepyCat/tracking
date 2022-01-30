@@ -10,11 +10,10 @@
 
 
     <!-- Форма новой задачи -->
-    <form action="{{ url('created') }}" method="POST">
+    <form action="{{ url('added') }}" method="POST">
         @csrf
         <input type="text" name="name" size="20" placeholder="Имя">
         <input type="e-mail" name="e_mail" size="10" placeholder="e-mail">
-        <input type="text" name="order_id" size="10" placeholder="order id">
         <input type="url" name="invoice_url" size="10" placeholder="Invoice URL">
         <button type="submit">
             Добавить пользователя

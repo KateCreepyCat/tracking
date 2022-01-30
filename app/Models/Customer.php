@@ -12,7 +12,8 @@ class Customer extends Model
     protected $fillable = [
         'name',
         'e-mail',
-        'invoice_url'
+        'invoice_url',
+        'order_id'
     ];
 
     public function tracks()

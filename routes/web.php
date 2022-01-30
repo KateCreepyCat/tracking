@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 Route::get('/create', [MainController::class, 'newTrackForm']);
 Route::post('/created', [MainController::class, 'newTrackRequest']);
+Route::get('/add', [MainController::class, 'addTrackForm']);
+Route::post('/added', [MainController::class, 'addTrackRequest']);

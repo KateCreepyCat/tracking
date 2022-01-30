@@ -17,7 +17,6 @@ class CreateTracksTable extends Migration
             $table->id();
             $table->string('track', 22);
             $table->foreignId('customer_id');
-            $table->unsignedInteger('order_id');
             $table->unsignedTinyInteger('stage');
             $table->text('date_text');
             $table->text('problem_text');

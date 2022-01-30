@@ -17,6 +17,7 @@ class CreateCustomersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('e-mail');
+            $table->unsignedInteger('order_id');
             $table->string('invoice_url');
             $table->timestamps();
         });

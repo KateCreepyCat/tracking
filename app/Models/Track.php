@@ -11,7 +11,7 @@ class Track extends Model
 
     protected $fillable = [
         'track',
-        'order_id',
+        'customer_id',
         'stage',
         'date_text',
         'problem_text',
