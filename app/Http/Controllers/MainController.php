@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Track;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ParserController;
 
 class MainController extends Controller
 {
@@ -50,5 +51,8 @@ class MainController extends Controller
         Customer::with('tracks')->where('id', '=', $customer_id)->delete();
         Track::where('track', '=', $request->track)->delete(); //problems setting up table relationships
         return redirect('/');
+    }
+    public function myTest (){
+        return ParserController::parser();
     }
 }
