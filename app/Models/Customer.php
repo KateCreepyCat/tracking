@@ -4,16 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Customer extends Model
 {
     use HasFactory;
 
-    public function tracks(): HasMany
-    {
-        return $this->hasMany(Track::class);
-    }
 
     protected $fillable = [
         'name',
@@ -22,5 +18,9 @@ class Customer extends Model
         'order_id'
     ];
 
+    public function tracks(): HasOne
+    {
+        return $this->hasOne(Track::class);
+    }
 
 }

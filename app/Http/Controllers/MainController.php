@@ -39,4 +39,16 @@ class MainController extends Controller
         ]);
         return redirect('/');
     }
+    public function deleteTrackForm(Request $request)
+    {
+        return view('form.delete');
+    }
+
+    public function deleteTrackRequest(Request $request)
+    {
+        $customer_id = Track::where('track', '=', $request->track)->first()->id;
+        Customer::with('tracks')->where('id', '=', $customer_id)->delete();
+        Track::where('track', '=', $request->track)->delete(); //problems setting up table relationships
+        return redirect('/');
+    }
 }

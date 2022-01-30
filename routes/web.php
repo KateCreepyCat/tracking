@@ -21,3 +21,6 @@ Route::get('/create', [MainController::class, 'newTrackForm']);
 Route::post('/created', [MainController::class, 'newTrackRequest']);
 Route::get('/add', [MainController::class, 'addTrackForm']);
 Route::post('/added', [MainController::class, 'addTrackRequest']);
+Route::get('/delete', [MainController::class, 'deleteTrackForm']);
+Route::post('/deleted', [MainController::class, 'deleteTrackRequest']);
+
