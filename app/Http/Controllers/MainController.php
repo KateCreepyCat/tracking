@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Customer;
+use App\Models\Track;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -15,13 +17,14 @@ class MainController extends Controller
     {
         Customer::create([
             'name' => $request->name,
-            'e-mail'=> $request->e_mail,
+            'e-mail' => $request->e_mail,
             'order_id' => $request->order_id,
-            'invoice_url'=> $request->invoice_url
+            'invoice_url' => $request->invoice_url
         ]);
 
         return redirect('/');
     }
+
     public function addTrackForm(Request $request)
     {
         return view('form.add');
@@ -29,6 +32,11 @@ class MainController extends Controller
 
     public function addTrackRequest(Request $request)
     {
+        $customer_id = Customer::where('order_id', '=', $request->order_id)->first();
+        Track::create([
+            'track' => $request->track,
+            'customer_id' => $customer_id->id
+        ]);
         return redirect('/');
     }
 }

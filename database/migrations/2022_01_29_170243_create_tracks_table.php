@@ -17,10 +17,10 @@ class CreateTracksTable extends Migration
             $table->id();
             $table->string('track', 22);
             $table->foreignId('customer_id');
-            $table->unsignedTinyInteger('stage');
-            $table->text('date_text');
-            $table->text('problem_text');
-            $table->boolean('update');
+            $table->unsignedTinyInteger('stage')->default(1);
+            $table->text('date_text')->nullable()->default(NULL);
+            $table->text('problem_text')->nullable()->default(NULL);
+            $table->boolean('update')->default(false);
             $table->timestamps();
         });
     }
